@@ -16,7 +16,7 @@
 *.iml
 *.ipr
 
-### NetBeans ###
+### NetBeans ###git remote add origin https://github.com/ViviZa/Calculator.git
 /nbproject/private/
 /build/
 /nbbuild/
