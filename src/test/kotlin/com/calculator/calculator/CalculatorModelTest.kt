@@ -23,7 +23,7 @@ class CalculatorModelTest {
     @Test
     fun calculatorMultiplies2Numbers(){
         val result = calculatorModel.multiply(45, 2)
-        assertThat(result, `is`(70))
+        assertThat(result, `is`(90))
     }
 
     @Test
