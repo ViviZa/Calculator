@@ -9,6 +9,6 @@ class CalController {
 
     @GetMapping("/myCalculator")
     fun getCalculator(): ModelAndView {
-        return ModelAndView()
+        return ModelAndView("CalculatorView")
     }
 }
