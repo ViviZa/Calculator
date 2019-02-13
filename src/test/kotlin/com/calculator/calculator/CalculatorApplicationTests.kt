@@ -24,7 +24,7 @@ class CalculatorApplicationTests {
 
     @Test
     fun contextLoads() {
-        get("/myCalculator")
+        get("/calculatorview")
                 .then()
                 .assertThat().statusCode(200)
     }
