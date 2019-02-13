@@ -12,10 +12,7 @@ class CalController {
     @RequestMapping("/calculatorview")
     fun getCalculator(): ModelAndView {
         val mav = ModelAndView("calculatorview")
-        mav.addObject("addNumbers", calculatorModel.add(2, 3))
-        mav.addObject("subtractNumbers", calculatorModel.subtract(2, 3))
-        mav.addObject("multiplyNumbers", calculatorModel.multiply(2, 3))
-        mav.addObject("divideNumbers", calculatorModel.divide(2, 3))
+        mav.addObject("calculator", calculatorModel)
         return mav
     }
 }

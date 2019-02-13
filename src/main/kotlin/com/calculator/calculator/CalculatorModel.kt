@@ -8,14 +8,17 @@ class CalculatorModel {
     }
 
     fun subtract(x: Int, y: Int): Int {
+        System.out.println(x-y)
         return x - y
     }
 
     fun multiply(x : Int, y: Int) : Int {
+        System.out.println(x*y)
         return x * y
     }
 
     fun divide(x : Int, y: Int) : Int {
+        System.out.println(x/y)
         return x / y
     }
 }
