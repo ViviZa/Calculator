@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView
 @Controller
 class CalController {
 
-    private val calculatorModel = CalculatorModel()
+    private val calculatorModel = CalculatorService()
 
     @RequestMapping("/calculatorview")
     fun getCalculator(): ModelAndView {
