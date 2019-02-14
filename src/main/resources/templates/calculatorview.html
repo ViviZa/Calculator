@@ -6,9 +6,13 @@
 </head>
 <body>
 <h1>Calculator</h1>
-<button th:onclick="${calculator.add(2,3)}">Add two numbers</button>
-<button th:onclick="${calculator.subtract(2,3)}">Subtract two numbers</button>
-<button th:onclick="${calculator.multiply(2,3)}">Multiply two numbers</button>
-<button th:onclick="${calculator.divide(2,3)}">Divide two numbers</button>
+<p>Add two numbers</p>
+<span th:text="${calculator.add(2,3)}"></span>
+<p>Subtract two numbers</p>
+<span th:text="${calculator.subtract(2,3)}"></span>
+<p>Multiply two numbers</p>
+<span th:text="${calculator.multiply(2,3)}"></span>
+<p>Divide two numbers</p>
+<span th:text="${calculator.divide(2,3)}"></span>
 </body>
 </html>
