@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ModelAndView
 @Controller
 class CalController {
 
-    private val calculatorModel = CalculatorService()
+    private val calculatorService = CalculatorService()
 
     @RequestMapping("/calculatorview")
     fun getCalculator(): ModelAndView {
+        val calculatorModel = CalculatorModel();
         val mav = ModelAndView("calculatorview")
         mav.addObject("calculator", calculatorModel)
         return mav
