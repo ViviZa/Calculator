@@ -5,14 +5,20 @@
     <title>Calculator</title>
 </head>
 <body>
-<h1>Calculator</h1>
-<p>Add two numbers</p>
-<span th:text="${calculator.add(2,3)}"></span>
-<p>Subtract two numbers</p>
-<span th:text="${calculator.subtract(2,3)}"></span>
-<p>Multiply two numbers</p>
-<span th:text="${calculator.multiply(2,3)}"></span>
-<p>Divide two numbers</p>
-<span th:text="${calculator.divide(2,3)}"></span>
+    <h1>Calculator</h1>
+
+    <form action="#" th:action="@{/add}" th:object="${calculator}" method="post">
+            <tr>
+                <td><label>First Value</label></td>
+                <td><input type="number" th:field="*{x}" /></td>
+            </tr>
+            <tr>
+                <td><label>Second Value</label></td>
+                <td><input type="number" th:field="*{y}" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+    </form>
 </body>
 </html>
