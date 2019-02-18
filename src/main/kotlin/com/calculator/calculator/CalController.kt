@@ -19,17 +19,33 @@ class CalController {
         return mav
     }
 
-    @RequestMapping(value = ["/add"], method = [RequestMethod.POST])
-    fun addValues(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+    @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params=["action=add"])
+    fun add(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
         val result = calculatorService.add(calculator)
         val mav = ModelAndView("addedTemplate")
         mav.addObject("result", result)
         return mav
     }
 
-    @RequestMapping(value = ["/subtract"], method = [RequestMethod.POST])
-    fun subtractValues(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+    @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params=["action=subtract"])
+    fun subtract(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
         val result = calculatorService.subtract(calculator)
+        val mav = ModelAndView("addedTemplate")
+        mav.addObject("result", result)
+        return mav
+    }
+
+    @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params=["action=multiply"])
+    fun multiply(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+        val result = calculatorService.multiply(calculator)
+        val mav = ModelAndView("addedTemplate")
+        mav.addObject("result", result)
+        return mav
+    }
+
+    @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params=["action=divide"])
+    fun divide(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+        val result = calculatorService.divide(calculator)
         val mav = ModelAndView("addedTemplate")
         mav.addObject("result", result)
         return mav
