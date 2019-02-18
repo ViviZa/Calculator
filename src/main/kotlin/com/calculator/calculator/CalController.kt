@@ -13,15 +13,23 @@ class CalController {
 
     @RequestMapping("/calculatorview")
     fun getCalculator(): ModelAndView {
-        val calculatorModel = CalculatorModel();
+        val calculatorModel = CalculatorModel()
         val mav = ModelAndView("calculatorview")
         mav.addObject("calculator", calculatorModel)
         return mav
     }
 
     @RequestMapping(value = ["/add"], method = [RequestMethod.POST])
-    fun postCalculator(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+    fun addValues(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
         val result = calculatorService.add(calculator)
+        val mav = ModelAndView("addedTemplate")
+        mav.addObject("result", result)
+        return mav
+    }
+
+    @RequestMapping(value = ["/subtract"], method = [RequestMethod.POST])
+    fun subtractValues(@ModelAttribute calculator: CalculatorModel) : ModelAndView {
+        val result = calculatorService.subtract(calculator)
         val mav = ModelAndView("addedTemplate")
         mav.addObject("result", result)
         return mav

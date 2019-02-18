@@ -12,7 +12,7 @@ class CalControllerTest {
 val calController = CalController()
 
     @Test
-    fun templateIsShown(){
+    fun calculatorTemplateIsShown(){
         val mav : ModelAndView = calController.getCalculator()
         assertThat(mav.viewName, `is`("calculatorview"))
     }

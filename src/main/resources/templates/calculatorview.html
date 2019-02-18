@@ -5,20 +5,20 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
+<h1>Calculator</h1>
+<form action="#" th:action="@{/add}" th:object="${calculator}" method="post">
 
-    <form action="#" th:action="@{/add}" th:object="${calculator}" method="post">
-            <tr>
-                <td><label>First Value</label></td>
-                <td><input type="number" th:field="*{x}" /></td>
-            </tr>
-            <tr>
-                <td><label>Second Value</label></td>
-                <td><input type="number" th:field="*{y}" /></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Submit"/></td>
-            </tr>
-    </form>
+<tr>
+    <td><label>First Value</label></td>
+    <td><input type="number" th:field="*{x}"/></td>
+</tr>
+<tr>
+    <td><label>Second Value</label></td>
+    <td><input type="number" th:field="*{y}"/></td>
+</tr>
+    <tr>
+        <td><input type="submit" value="Add"/></td>
+    </tr>
+</form>
 </body>
 </html>
