@@ -1,6 +1,6 @@
 # Calculator
 
-This is a small project developed with test driven development.
+This is a small spring boot project developed with test driven development.
 
 ## Start application
 
