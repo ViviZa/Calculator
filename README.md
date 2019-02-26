@@ -1,4 +1,4 @@
-# Calculator
+# Calculator [![Build Status](https://travis-ci.com/ViviZa/Calculator.svg?branch=master)](https://travis-ci.com/ViviZa/Calculator)
 
 This is a small spring boot project developed with test driven development.
 
@@ -13,7 +13,3 @@ mvn spring-boot:run
 ```
 mvn clean verify
 ```
-
-## CI Server
-
-https://travis-ci.com/ViviZa/Calculator
