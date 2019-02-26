@@ -2,6 +2,8 @@ package com.calculator.calculator
 
 import io.restassured.RestAssured
 import io.restassured.RestAssured.*
+import io.restassured.http.ContentType
+import org.hamcrest.CoreMatchers
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
@@ -29,5 +31,29 @@ class CalculatorApplicationTests {
                 .assertThat().statusCode(200)
     }
 
+    @Test
+    fun postValues() {
+        RestAssured
+                .given()
+                .`when`()
+                .contentType(ContentType.URLENC)
+                .body("x=2&y=2&action=add")
+                .post("/calculation")
+                .then()
+                .assertThat().statusCode(200)
+                .body(CoreMatchers.containsString("4"))
+    }
+
+    @Test
+    fun divideByZero() {
+        given()
+                .`when`()
+                .contentType(ContentType.URLENC)
+                .body("x=0&y=0&action=divide")
+                .post("/calculation")
+                .then()
+                .assertThat().statusCode(200)
+                .body(CoreMatchers.containsString("Calculator"))
+    }
 }
 
