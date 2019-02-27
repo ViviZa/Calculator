@@ -32,7 +32,7 @@ class CalculatorApplicationTests {
     }
 
     @Test
-    fun postValues() {
+    fun addValues() {
         RestAssured
                 .given()
                 .`when`()
@@ -42,6 +42,32 @@ class CalculatorApplicationTests {
                 .then()
                 .assertThat().statusCode(200)
                 .body(CoreMatchers.containsString("4"))
+    }
+
+    @Test
+    fun subtractValues() {
+        RestAssured
+                .given()
+                .`when`()
+                .contentType(ContentType.URLENC)
+                .body("x=5&y=2&action=subtract")
+                .post("/calculation")
+                .then()
+                .assertThat().statusCode(200)
+                .body(CoreMatchers.containsString("3"))
+    }
+
+    @Test
+    fun multiplyValues() {
+        RestAssured
+                .given()
+                .`when`()
+                .contentType(ContentType.URLENC)
+                .body("x=2&y=4&action=multiply")
+                .post("/calculation")
+                .then()
+                .assertThat().statusCode(200)
+                .body(CoreMatchers.containsString("8"))
     }
 
     @Test
