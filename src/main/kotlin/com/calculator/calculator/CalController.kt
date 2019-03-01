@@ -22,7 +22,8 @@ class CalController {
     @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params = ["action=add"])
     fun add(@ModelAttribute calculator: CalculatorModel): ModelAndView {
         val result = calculatorService.add(calculator)
-        val mav = ModelAndView("addedTemplate")
+        val mav = ModelAndView("calculatorview")
+        mav.addObject("calculator", calculator)
         mav.addObject("result", result)
         return mav
     }
@@ -30,7 +31,8 @@ class CalController {
     @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params = ["action=subtract"])
     fun subtract(@ModelAttribute calculator: CalculatorModel): ModelAndView {
         val result = calculatorService.subtract(calculator)
-        val mav = ModelAndView("addedTemplate")
+        val mav = ModelAndView("calculatorview")
+        mav.addObject("calculator", calculator)
         mav.addObject("result", result)
         return mav
     }
@@ -38,7 +40,8 @@ class CalController {
     @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params = ["action=multiply"])
     fun multiply(@ModelAttribute calculator: CalculatorModel): ModelAndView {
         val result = calculatorService.multiply(calculator)
-        val mav = ModelAndView("addedTemplate")
+        val mav = ModelAndView("calculatorview")
+        mav.addObject("calculator", calculator)
         mav.addObject("result", result)
         return mav
     }
@@ -46,10 +49,11 @@ class CalController {
     @RequestMapping(value = ["/calculation"], method = [RequestMethod.POST], params = ["action=divide"])
     fun divide(@ModelAttribute calculator: CalculatorModel): ModelAndView {
         if (calculator.y == 0) {
-            return getCalculator()
+            return ModelAndView("errorTemplate")
         }
         val result = calculatorService.divide(calculator)
-        val mav = ModelAndView("addedTemplate")
+        val mav = ModelAndView("calculatorview")
+        mav.addObject("calculator", calculator)
         mav.addObject("result", result)
         return mav
     }
