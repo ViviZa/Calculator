@@ -14,7 +14,7 @@ import org.springframework.boot.web.server.LocalServerPort
 
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CalculatorApplicationTests {
+class CalculatorApplicationIT {
 
     @LocalServerPort
     var port: Int = 0
