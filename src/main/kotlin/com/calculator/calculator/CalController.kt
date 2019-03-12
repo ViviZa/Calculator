@@ -54,7 +54,7 @@ class CalController {
         val result = calculatorService.divide(calculator)
         val mav = ModelAndView("calculatorview")
         mav.addObject("calculator", calculator)
-        mav.addObject("result", result)
+        mav.addObject( "result", result)
         return mav
     }
 }

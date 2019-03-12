@@ -16,4 +16,8 @@ val calController = CalController()
         val mav : ModelAndView = calController.getCalculator()
         assertThat(mav.viewName, `is`("calculatorview"))
     }
+
+    @Test
+    fun addedTemplateIsShown(){
+    }
 }
