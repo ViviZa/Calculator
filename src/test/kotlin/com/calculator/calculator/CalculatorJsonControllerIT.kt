@@ -32,7 +32,7 @@ class CalculatorJsonControllerIT {
                 .post("/add")
                 .then()
                 .assertThat().statusCode(200)
-                .body("second", `is`(4))
+                .body("result", `is`(4))
     }
 
     @Test
@@ -45,7 +45,7 @@ class CalculatorJsonControllerIT {
                 .post("/subtract")
                 .then()
                 .assertThat().statusCode(200)
-                .body("second", `is`(3))
+                .body("result", `is`(3))
     }
 
     @Test
@@ -58,7 +58,7 @@ class CalculatorJsonControllerIT {
                 .post("/multiply")
                 .then()
                 .assertThat().statusCode(200)
-                .body("second", `is`(8))
+                .body("result", `is`(8))
     }
 
     @Test
@@ -70,6 +70,6 @@ class CalculatorJsonControllerIT {
                 .post("/divide")
                 .then()
                 .assertThat().statusCode(200)
-                .body("second", `is`(2))
+                .body("result", `is`(2))
     }
 }
