@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+import Calculator from './Calculator'
 
 class App extends React.Component {
 
@@ -9,7 +10,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <h1>Hello Calculator</h1>
+        <div>
+            <h1>Calculator</h1>
+            <Calculator/>
+        </div>
         )
     }
 }
